@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Developer;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Pagination\Paginator;
 class PostsController extends Controller
 {
     public function __construct()
@@ -18,8 +20,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('blog.index')
-        ->with('posts', Post::orderBy('created_at', 'DESC')->get());
+        $developers = Developer::all();
+        $posts = Post::orderBy('created_at', 'DESC')->paginate(3);
+        return view('blog.index', compact(['posts', 'developers']));
+        // ->with('posts', Post::orderBy('created_at', 'DESC')->get()->with('developer', $developer));
     }
 
     /**
@@ -29,7 +33,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        $posts = Post::all();
+        return view('blog.create', compact('posts'));
     }
 
     /**
@@ -43,6 +48,7 @@ class PostsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'content' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg|max:5048'
         ]);
 
@@ -52,6 +58,7 @@ class PostsController extends Controller
 
         Post::create([
             'title' => $request->input('title'),
+            'content' => $request->input('content'),
             'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $img,
@@ -98,12 +105,14 @@ class PostsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'content' => 'required',
         ]);
 
         Post::where('slug', $slug)
         ->update([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
+            'content' => $request->input('content'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'user_id' => auth()->user()->id
         ]);
