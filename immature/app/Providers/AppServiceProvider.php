@@ -38,8 +38,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('admin', function () {
             return request()->user()?->can('admin');
         });
-
-        $developers = Developer::get();
-        View::share('developers', $developers);
+        //delete comment after database migration
+        // $developers = Developer::get();
+        // View::share('developers', $developers);
     }
 }
