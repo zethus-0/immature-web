@@ -17,7 +17,7 @@
         <div class="container flex justify-between mx-auto">
             <div class="w-full lg:w-8/12">
                 <div class="flex items-center justify-between">
-                    <h1 class="text-xl font-bold text-gray-700 md:text-2xl">Post</h1>
+                    <h1 class="text-xl font-bold text-gray-700 md:text-2xl">Development Blog</h1>
                     @admin
                     <a href="blog/create" class="px-3 py-2 mx-1 font-medium text-black bg-white rounded-md">
                         Create new post
@@ -25,47 +25,52 @@
                     @endadmin
                     {{-- <div>
                         <select class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            <option>Latest</option>
+                            <option>First</option>
                             <option>Last Week</option>
                         </select>
                     </div> --}}
                 </div>
                 @foreach ($posts as $post)
                 <div class="mt-6">
-                    <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
-                        <div class="flex items-center justify-between"><span class="font-light text-gray-600">{{ date('jS M Y', strtotime($post->created_at))}}</span><a href="/blog/{{ $post->slug }}"
-                                class="px-2 py-1 font-bold text-gray-100 bg-gray-600 rounded hover:bg-gray-500">TBC CAT</a>
-                        </div>
-                        <div class="mt-2"><a href="/blog/{{ $post->slug }}" class="text-2xl font-bold text-gray-700 hover:underline">{{ $post->title }}</a>
-                            <p class="mt-2 text-gray-600"> {{ $post->description }}</p>
-                        </div>
-                        <div class="flex items-center justify-between mt-4"><a href="/blog/{{ $post->slug }}"
-                                class="text-blue-500 hover:underline">Read more </a>
-                            <div>
+                 <div class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <img class="object-cover w-full h-64" src="{{ asset('images/' . $post->image_path) }}" alt="Development Blog Image">
 
-                                <a href="/" class="flex items-center"><img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Face-smile.svg/2048px-Face-smile.svg.png"
-                                        alt="avatar" class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block">
-                                    <h1 class="font-bold text-gray-700 hover:underline"> {{ $post->user->name }}</h1>
-                                </a>
-                                @admin
-                                <span class="float-right">
-                                    <a href="/blog/{{ $post->slug }}/edit" class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">Edit</a>
-                                </span>
-                                <span class="float-right">
+        <div class="p-6">
+            <div>
+                <span class="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">Category//Not Implemented</span>
+                <a href="/blog/{{ $post->slug }}" class="block mt-2 text-2xl font-semibold text-gray-800 dark:text-white hover:text-gray-600 hover:underline">{{ $post->title }}</a>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{ $post->description }}</p>
+            </div>
 
-                        <form action="/blog/{{ $post->slug }}" method="POST">
+            <div class="mt-4">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <img class="object-cover h-10 rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Face-smile.svg/2048px-Face-smile.svg.png" alt="Avatar">
+                        <a href="#" class="mx-2 font-semibold text-gray-700 dark:text-gray-200">{{ $post->user->name }}</a>
+                    </div>
+                    <span class="mx-1 text-xs text-gray-600 dark:text-gray-300">{{ date('jS M Y', strtotime($post->created_at))}}</span>
+
+                    @admin
+                    <div class="flex items-center px-5">
+                    <button onclick="window.location.href='/blog/{{ $post->slug }}/edit'" class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-80">
+                        Edit
+                    </button>
+                    <form action="/blog/{{ $post->slug }}" method="POST">
                         @csrf
                         @method('delete')
-                        <button onclick="return confirm('Are you sure?')" class="text-gray-700 pr-3" type="submit">Delete</button>
-                        </form>
-                                </span>
-                                @endadmin
-                            </div>
-                        </div>
-                    </div>
+                    <button onclick="return confirm('Are you sure?')" type="submit" class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-80">
+                        Delete
+                    </button>
+                </form>
+            </div>
+                    @endadmin
                 </div>
-                @endforeach
+
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
                 <div class="mt-8">
                     <div class="flex-auto">
                         {{ $posts->links() }}

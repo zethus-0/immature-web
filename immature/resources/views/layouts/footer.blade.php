@@ -25,6 +25,11 @@
                         Register
                     </a>
                 </li>
+                <li class="pb-1">
+                    <a href="https://game.immature.live">
+                        Game
+                    </a>
+                </li>
             </ul>
         </div>
         <div>

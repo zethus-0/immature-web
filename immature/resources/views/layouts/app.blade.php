@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="description" content="Team 26 presents Immature an online turn-based multiplayer card game" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Team 26/Dylan" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -12,9 +15,11 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
         <header>
@@ -23,7 +28,8 @@
                 <div class="">
                     <nav class="flex items-center justify-between flex-wrap  ">
                         <div class="flex items-center flex-no-shrink text-white mr-6 ">
-                            <a href="/"><img src="{{ url('/images') }}/logo-2.svg" alt="" class="h-12 xl:h-20  mr-2  "></a>
+                            <a href="/"><img src="{{ url('/images') }}/logo-2.svg" alt=""
+                                    class="h-12 xl:h-20  mr-2  "></a>
                         </div>
                         <div class="block lg:hidden">
                             <button
@@ -45,71 +51,78 @@
                                     class="block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
                                     BLOG
                                 </a>
-@guest
-                                <a href="{{ route('login') }}"
-                                    class="block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
-                                    LOGIN
-                                </a>
-                                @if (Route::has('register'))
-                                <a href="{{ route('register') }}"
-                                    class="block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
-                                    REGISTER
-                                </a>
-                                @endif
+                                @guest
+                                    <a href="{{ route('login') }}"
+                                        class="block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
+                                        LOGIN
+                                    </a>
+                                    @if(Route::has('register'))
+                                        <a href="{{ route('register') }}"
+                                            class="block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
+                                            REGISTER
+                                        </a>
+                                    @endif
                                 @else
-                                <a href="/{{Auth::user()->username}}"
-                                    class="uppercase block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
-                                    {{Auth::user()->name}}
-                                </a>
-                                <a href="{{ route('logout') }}"
-                                    class="uppercase block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
-                                </a> <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                    {{ csrf_field() }}
-                                </form>
+                                    <a href="/{{ Auth::user()->username }}"
+                                        class="uppercase block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                    <a href="{{ route('logout') }}"
+                                        class="uppercase block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}"
+                                        method="POST" class="hidden">
+                                        {{ csrf_field() }}
+                                    </form>
                                 @endguest
                             </div>
                         </div>
+                        <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
                     </nav>
+
                 </div>
             </div>
-
-    </header>
-
-
+        </div>
+        </header>
 
 
 
-    <script>
-    // Navbar Toggle
-    document.addEventListener('DOMContentLoaded', function () {
 
-        // Get all "navbar-burger" elements
-        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-        // Check if there are any navbar burgers
-        if ($navbarBurgers.length > 0) {
+        <script>
+            // Navbar Toggle
+            document.addEventListener('DOMContentLoaded', function () {
 
-          // Add a click event on each of them
-          $navbarBurgers.forEach(function ($el) {
-            $el.addEventListener('click', function () {
+                // Get all "navbar-burger" elements
+                var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-              // Get the "main-nav" element
-              var $target = document.getElementById('main-nav');
+                // Check if there are any navbar burgers
+                if ($navbarBurgers.length > 0) {
 
-              // Toggle the class on "main-nav"
-              $target.classList.toggle('hidden');
+                    // Add a click event on each of them
+                    $navbarBurgers.forEach(function ($el) {
+                        $el.addEventListener('click', function () {
+
+                            // Get the "main-nav" element
+                            var $target = document.getElementById('main-nav');
+
+                            // Toggle the class on "main-nav"
+                            $target.classList.toggle('hidden');
+
+                        });
+                    });
+                }
 
             });
-          });
-        }
 
-      });
-      </script>
-<div>
-        @yield('content')
-</div>
-<div>
-    @include('layouts.footer')
-    </div>
+        </script>
+        <div>
+            @yield('content')
+        </div>
+        <div>
+            @include('layouts.footer')
+        </div>
 </body>
+
 </html>
