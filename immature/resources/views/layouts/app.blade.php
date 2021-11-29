@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <!-- META INFO -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Team 26 presents Immature an online turn-based multiplayer card game" />
@@ -19,11 +20,10 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-
+<!-- NAVIGATION MENU -->
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
         <header>
-
             <div class="py-4 px-2 lg:mx-4 xl:mx-12 ">
                 <div class="">
                     <nav class="flex items-center justify-between flex-wrap  ">
@@ -88,7 +88,7 @@
 
 
 
-
+<!-- SCREEN SIZE SCRIPT -->
 
         <script>
             // Navbar Toggle

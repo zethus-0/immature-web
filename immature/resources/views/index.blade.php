@@ -1,24 +1,16 @@
 @extends('layouts.app')
 @section('content')
 <section class="relative bg-black overflow-hidden">
-    <div class="relative w-2/3 ml-auto">
-        <!-- HERO IMAGES -->
-      <div class="absolute top-0 left-0 -ml-64 rounded-full h-20 md:h-160 w-80 md:w-160">
-        <img class="object-contain transform scale-200" src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+    <div>
+      <div class="absolute left-0">
+        <img class="w-auto h-full transform object-cover" src="{{ url('/images') }}/splashres.webp" alt="" />
       </div>
-      <div class="absolute top-1/2 left-0 mt-40 lg:mt-20 rounded-full h-20 md:h-160 w-80 md:w-160">
-        <img class="object-contain transform scale-200" src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
-      </div>
-      <div class="absolute top-0 left-0 -mt-40 ml-40 transform -translate-x-1/2 rotate-45 clip-path" style="width: 1000px; height: 1000px;">
-        <img class="h-full transform -rotate-45 object-cover" src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
-      </div>
-    </div>
-    <div class="relative flex mb-20 px-16 py-8 justify-between bg-transparent"></div>
-    <div class="relative container mx-auto px-4 pb-24 md:pb-64">
-      <div class="relative max-w-6xl mx-auto">
-        <span class="block mb-4 md:absolute top-0 right-0 text-gray-500 lg:text-lg font-semibold uppercase tracking-widest">Team 26 Presents</span>
-        <h2 class="mb-6 md:mb-0 text-2xl sm:text-4xl md:text-6xl text-white uppercase font-heading">
-          <span>Immature</span>
+      <div class="relative flex mb-20 px-16 py-8 justify-between bg-transparent"></div>
+      <div class="relative container mx-auto px-4 pb-24 md:pb-64">
+        <div class="relative max-w-6xl mx-auto">
+          <span class="block mb-4 md:absolute top-0 right-0 text-gray-100 lg:text-lg font-semibold uppercase tracking-widest">Team 26 Presents</span>
+          <h2 class="mb-6 md:mb-0 text-2xl sm:text-4xl md:text-6xl text-white uppercase font-heading">
+            <span>Immature</span>
           <span class="block">Interactive Online Game</span>
         </h2>
         <a class="inline-flex items-center mt-20 py-4 px-6 rounded-full bg-yellow-400  hover:bg-yellow-500 transform duration-200" href="https://game.immature.live">
