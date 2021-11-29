@@ -28,7 +28,7 @@
                 <div class="">
                     <nav class="flex items-center justify-between flex-wrap  ">
                         <div class="flex items-center flex-no-shrink text-white mr-6 ">
-                            <a href="/"><img src="{{ url('/images') }}/logo-2.svg" alt=""
+                            <a href="/"><img src="{{ url('/images') }}/logo-2.png" alt=""
                                     class="h-12 xl:h-20  mr-2  "></a>
                         </div>
                         <div class="block lg:hidden">
