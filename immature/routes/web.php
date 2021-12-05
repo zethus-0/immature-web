@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [PagesController::class, 'index']);
+Route::get('/team', [PagesController::class, 'team']);
+
 
 Route::resource('/blog', PostsController::class);
 Route::resource('/blog.create', PostsController::class);

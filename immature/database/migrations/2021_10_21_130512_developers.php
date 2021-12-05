@@ -17,6 +17,7 @@ class Developers extends Migration
             $table->id();
             $table->string('name');
             $table->string('username')->unique();
+            $table->string('role');
             $table->string('email')->unique();
             $table->string('image_path');
             $table->string('number');

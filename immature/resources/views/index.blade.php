@@ -34,7 +34,7 @@
           </a>
         </div>
         <div class="w-full md:w-1/2 px-px">
-          <a class="flex justify-center items-center h-32 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm hover:bg-opacity-50" href="/errors/503">
+          <a class="flex justify-center items-center h-32 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm hover:bg-opacity-50" href="/team">
             <div class="flex items-center text-sm">
               <span class="mr-2 text-white font-medium hover:underline font-heading">Meet our team</span>
               <svg width="17" height="9" viewBox="0 0 17 9" fill="none" xmlns="http://www.w3.org/2000/svg">

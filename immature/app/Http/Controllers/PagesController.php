@@ -10,6 +10,13 @@ class PagesController extends Controller
     {
         return view('index');
     }
+
+    public function team()
+    {
+        return view('team');
+    }
+
+
     public function about()
     {
 
