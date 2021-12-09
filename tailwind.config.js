@@ -4,12 +4,19 @@ module.exports = {
       './resources/css/**/*.css',
     ],
     theme: {
-      extend: {}
+      extend: {
+        colors: {
+          primary: "var(--primary)",
+          secondary: "var(--secondary)",
+          main: "var(--main)",
+          background: "var(--background)",
+          accent: "var(--accent)"
+        }
+      }
     },
     variants: {},
     plugins: [
       require('@tailwindcss/ui'),
       require('@tailwindcss/forms'),
     ]
-
   }

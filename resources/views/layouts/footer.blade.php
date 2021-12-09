@@ -1,52 +1,38 @@
-<footer class="bg-black py-20 mt-20">
-    <div class="sm:grid grid-cols-2 w-4/5 pb-10 m-auto border-b-2 border-gray-800">
-        <div>
-            <h3 class="text-l sm:font-bold text-gray-100">
-                Pages
-            </h3>
-            <ul class="py-4 sm:text-s pt-4 text-gray-400">
-                <li class="pb-1">
+<footer class="bg-primary py-5 mt-5">
+    <div class="w-4/5 pb-3 m-auto border-b-2 border-gray-800">
+        
+        <div class="flow-root ">
+            <p class="float-left py-4 sm:text-s pt-2 text-main">
+                <span class="footer-nav pb-1 mr-5">
                     <a href="/">
-                        Home
+                        HOME
                     </a>
-                </li>
-                <li class="pb-1">
+                </span>
+                <span class="footer-nav pb-1 mr-5">
                     <a href="/blog">
-                        Blog
+                        BLOG
                     </a>
-                </li>
-                <li class="pb-1">
+                </span>
+                <span class="footer-nav pb-1 mr-5">
                     <a href="/login">
-                        Login
+                        LOGIN
                     </a>
-                </li>
-                <li class="pb-1">
+                </span>
+                <span class="footer-nav pb-1 mr-5">
                     <a href="/register">
-                        Register
+                        REGISTER
                     </a>
-                </li>
-                <li class="pb-1">
+                </span>
+                <span class="footer-nav pb-1 mr-5">
                     <a href="https://game.immature.live">
-                        Game
+                        GAME
                     </a>
-                </li>
-            </ul>
+                </span>
+    
+            </p>
+            <p class="footer-nav float-right pb-3 text-s ml-10 text-main pt-2">
+                © Copyright 2021 Team 26 
+            </p>
         </div>
-        <div>
-            <h3 class="text-l sm:font-bold text-gray-100">
-                Developers
-            </h3>
-            <ul class="py-4 sm:text-s pt-4 text-gray-400">
-                @foreach ($developers as $developer)
-                <li class="pb-1">
-                    <a href="/">
-                        {{ $developer->name }}
-                    </a>
-                </li>
-                @endforeach
-        </div>
-
-<p class= "w-25 w-4/5 pb-3 m-auto text-xs text-gray-100 pt-6">
-    © Copyright 2021 Team 26. </p>
-    </div>
-
+</div>
+</footer>

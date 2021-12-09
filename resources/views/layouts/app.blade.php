@@ -21,13 +21,13 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <!-- NAVIGATION MENU -->
-<body class="bg-gray-100 h-screen antialiased leading-none font-sans">
+<body class="bg-background h-screen antialiased leading-none font-sans">
     <div id="app">
         <header>
-            <div class="py-4 px-2 lg:mx-4 xl:mx-12 ">
+            <div class="bg-primary py-4 px-2 ">
                 <div class="">
                     <nav class="flex items-center justify-between flex-wrap  ">
-                        <div class="flex items-center flex-no-shrink text-white mr-6 ">
+                        <div class="logo-cont flex items-center flex-no-shrink text-white mr-6 ">
                             <a href="/"><img src="{{ url('/images') }}/logo-2.png" alt=""
                                     class="h-12 xl:h-20  mr-2  "></a>
                         </div>
@@ -44,31 +44,31 @@
                         <div id="main-nav" class="w-full flex-grow lg:flex items-center lg:w-auto hidden  ">
                             <div class="text-sm lg:flex-grow mt-2 animated jackinthebox xl:mx-8">
                                 <a href="/"
-                                    class="block lg:inline-block text-md font-bold  text-orange-500  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
+                                    class="block lg:inline-block text-lg font-bold  text-main  sm:hover:border-accent  hover:text-accent mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
                                     HOME
                                 </a>
                                 <a href="/blog"
-                                    class="block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
+                                    class="block lg:inline-block text-lg font-bold  text-main  sm:hover:border-accent  hover:text-accent mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
                                     BLOG
                                 </a>
                                 @guest
                                     <a href="{{ route('login') }}"
-                                        class="block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
+                                        class="block lg:inline-block text-lg font-bold  text-main  sm:hover:border-accent  hover:text-accent mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
                                         LOGIN
                                     </a>
                                     @if(Route::has('register'))
                                         <a href="{{ route('register') }}"
-                                            class="block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
+                                            class="block lg:inline-block text-lg font-bold  text-main  sm:hover:border-accent  hover:text-accent mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
                                             REGISTER
                                         </a>
                                     @endif
                                 @else
                                     <a href="/{{ Auth::user()->username }}"
-                                        class="uppercase block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
+                                        class="uppercase block lg:inline-block text-md font-bold  text-primary  sm:hover:border-accent  hover:text-main mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
                                         {{ Auth::user()->name }}
                                     </a>
                                     <a href="{{ route('logout') }}"
-                                        class="uppercase block lg:inline-block text-md font-bold  text-gray-900  sm:hover:border-indigo-400  hover:text-orange-500 mx-2 focus:text-blue-500  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
+                                        class="uppercase block lg:inline-block text-md font-bold  text-primary  sm:hover:border-accent  hover:text-main mx-2 p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}"

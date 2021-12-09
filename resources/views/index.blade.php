@@ -8,12 +8,12 @@
       <div class="relative flex mb-20 px-16 py-8 justify-between bg-transparent"></div>
       <div class="relative container mx-auto px-4 pb-24 md:pb-64">
         <div class="relative max-w-6xl mx-auto">
-          <span class="block mb-4 md:absolute top-0 right-0 text-gray-100 lg:text-lg font-semibold uppercase tracking-widest">Team 26 Presents</span>
-          <h2 class="mb-6 md:mb-0 text-2xl sm:text-4xl md:text-6xl text-white uppercase font-heading">
+          <span class="text-shadow block mb-4 md:absolute top-0 right-0 text-gray-100 lg:text-lg font-semibold uppercase tracking-widest">Team 26 Presents</span>
+          <h2 class="text-shadow mb-6 md:mb-0 text-2xl sm:text-4xl md:text-6xl text-white uppercase font-heading">
             <span>Immature</span>
           <span class="block">Interactive Online Game</span>
         </h2>
-        <a class="inline-flex items-center mt-20 py-4 px-6 rounded-full bg-yellow-400  hover:bg-yellow-500 transform duration-200" href="https://game.immature.live">
+        <a class="box-shadow inline-flex items-center mt-20 py-4 px-6 rounded-full bg-accent  hover:bg-main transform duration-200" href="https://game.immature.live">
           <svg class="mr-3" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.01 3.16553H0V5.24886H12.01V8.37386L16 4.20719L12.01 0.0405273V3.16553Z" fill="black"></path>
           </svg>
@@ -53,7 +53,7 @@
 <div class="grid grid-cols-1 m-auto">
    <div class="flex text-gray-100 pt-10">
       <div class="m-auto sm:m-auto w-4/5 block text-center">
-         <h1 class="sm:text-gray-700 text-5xl uppercase font-bold text-shadow-md pb-14">
+         <h1 class="sm:text-primary text-5xl uppercase font-bold text-shadow-md pb-14">
             @auth
             Welcome {{auth()->user()->name}}!
             @endauth
@@ -69,18 +69,18 @@
       <img src="{{ url('/images') }}/hero2.png" width="700" alt="tz" />
    </div>
    <div class="m-auto sm:m-auto text-left w-4/5 block">
-      <h2 class="text-4xl font-extrabold text-gray-600">
+      <h2 class="text-4xl font-extrabold text-primary">
          What is Immature?
       </h2>
-      <p class="py-8 text-gray-500 text-l">I
+      <p class="py-8 text-primary text-l">I
         Immature is an online, turn-based multiplayer social card game that focus on the battle of shrewdness and humour which allows players to have up to 3 to 8 players in a game
       </p>
-      <p class="font-extrabold text-gray-600 text-l pb-9">
+      <p class="font-extrabold text-primary text-l pb-9">
          Come take a look at our demo product!
       </p>
       <a href="https://game.immature.live"
-         class="uppercase bg-blue-500 text-gray-100 text-s font-extrabold py-3 px-8 rounded-3xl">
-      demo
+         class="box-shadow uppercase bg-accent hover:bg-main text-primary text-s font-extrabold py-3 px-8 rounded-3xl">
+      Demo
       </a>
    </div>
 </div>

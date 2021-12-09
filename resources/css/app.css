@@ -4,3 +4,33 @@
 
 @import "tailwindcss/utilities";
 
+
+
+:root {
+  --primary: #001524;  
+  --secondary: #15616D; 
+  --accent:#FFB569 ; 
+  --background: #FFECD1; 
+  --main: #FF7D00; 
+}
+
+.footer-nav {
+    font-size: medium;
+}
+
+.footer-nav:hover {
+    color: var(--accent);
+}
+
+.logo-cont {
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+.box-shadow {
+    box-shadow: 10px 10px 15px var(--primary);
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 1px var(--primary);
+}
