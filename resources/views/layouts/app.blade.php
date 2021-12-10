@@ -27,9 +27,9 @@
             <div class="bg-primary py-4 px-2 ">
                 <div class="">
                     <nav class="flex items-center justify-between flex-wrap  ">
-                        <div class="logo-cont flex items-center flex-no-shrink text-white mr-6 ">
+                        <div class="flex items-center flex-no-shrink text-white mr-6 ">
                             <a href="/"><img src="{{ url('/images') }}/logo-2.png" alt=""
-                                    class="h-12 xl:h-20  mr-2  "></a>
+                                    class="filter-invert h-50 object-cover xl:h-10 xl:w-40 mr-2  "></a>
                         </div>
                         <div class="block lg:hidden">
                             <button

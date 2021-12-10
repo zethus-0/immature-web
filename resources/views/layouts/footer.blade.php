@@ -1,4 +1,4 @@
-<footer class="bg-primary py-5 mt-5">
+<footer class="footer-shadow bg-primary py-5 mt-5">
     <div class="w-4/5 pb-3 m-auto border-b-2 border-gray-800">
         
         <div class="flow-root ">

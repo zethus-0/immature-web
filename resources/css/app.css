@@ -11,6 +11,7 @@
   --secondary: #15616D; 
   --accent:#FFB569 ; 
   --background: #FFECD1; 
+  --darker: #dacbb7; 
   --main: #FF7D00; 
 }
 
@@ -23,8 +24,7 @@
 }
 
 .logo-cont {
-    background-color: var(--accent);
-    border-radius: 50%;
+    height: 15rem;
 }
 
 .box-shadow {
@@ -33,4 +33,12 @@
 
 .text-shadow {
     text-shadow: 2px 2px 1px var(--primary);
+}
+
+.footer-shadow{
+    box-shadow: 0 50vh 0 50vh var(--primary);
+}
+
+.filter-invert{
+    filter:invert(100%);
 }

@@ -10,7 +10,8 @@ module.exports = {
           secondary: "var(--secondary)",
           main: "var(--main)",
           background: "var(--background)",
-          accent: "var(--accent)"
+          accent: "var(--accent)",
+          darker: "var(--darker)",
         }
       }
     },

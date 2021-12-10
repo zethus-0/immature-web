@@ -72,8 +72,8 @@
       <h2 class="text-4xl font-extrabold text-primary">
          What is Immature?
       </h2>
-      <p class="py-8 text-primary text-l">I
-        Immature is an online, turn-based multiplayer social card game that focus on the battle of shrewdness and humour which allows players to have up to 3 to 8 players in a game
+      <p class="py-8 text-primary text-l">
+        Immature is an online, turn-based, multiplayer, social card game that focuses on the battle of shrewdness and humour. It allows 3-8 players to enjoy many laughs as they surprise each other with amusing cards.
       </p>
       <p class="font-extrabold text-primary text-l pb-9">
          Come take a look at our demo product!
