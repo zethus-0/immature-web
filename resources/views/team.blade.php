@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 @section('content')
-<section class="bg-background leading-none">
+<section class="h-full bg-background leading-none">
 
 
 <div class="container w-100 mx-auto ">
@@ -39,11 +39,11 @@
 
             {{-- sect s --}}
             @foreach ($developers as $developer)
-            <div class=" w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-2 md:px-2 md:w-1/3 lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 xl:px-1">     
+            <div class=" w-full overflow-hidden sm:my-px sm:px-px sm:w-full md:my-2 md:px-2 md:w-1/3 lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 xl:px-1">
                 <div class=" text-primary border-2 border-primary bg-darker rounded profiles h-full">
                     <div class="p-6 profile">
                         <div>
-                            <img class="mx-auto h-40 w-40 object-cover" src="{{$developer->image_path}}"> </img>
+                            <img class="mx-auto h-40 w-40 object-cover" src="{{ $developer->image_path }}">
                         </div>
                         <h3 class=" text-center font-semibold text-2xl name">{{ $developer->name }} </h3>
                         <h5 class="font-semibold text-lg">{{ $developer->role }} </h5>
@@ -52,8 +52,8 @@
                 </div>
             </div>
             @endforeach
-            {{-- sect e --}}   
+            {{-- sect e --}}
     </div>
 </div>
-
+</section>
 @endsection
