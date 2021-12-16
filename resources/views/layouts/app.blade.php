@@ -21,7 +21,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <!-- NAVIGATION MENU -->
-<body class="bg-background h-screen antialiased leading-none font-sans">
+<body class="bg-background  antialiased leading-none font-sans ">
     <div id="app">
         <header>
             <div class="bg-primary py-4 px-2 ">
@@ -29,7 +29,7 @@
                     <nav class="flex items-center justify-between flex-wrap  ">
                         <div class="flex items-center flex-no-shrink text-white mr-6 ">
                             <a href="/"><img src="{{ url('/images') }}/logo-2.png" alt=""
-                                    class="filter-invert h-50 object-cover xl:h-10 xl:w-40 mr-2  "></a>
+                                    class="filter-invert h-50 object-cover h-10 w-40 mr-2  "></a>
                         </div>
                         <div class="block lg:hidden">
                             <button

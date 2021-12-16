@@ -7,12 +7,12 @@
 
 
 :root {
-  --primary: #001524;  
-  --secondary: #15616D; 
-  --accent:#FFB569 ; 
-  --background: #FFECD1; 
-  --darker: #dacbb7; 
-  --main: #FF7D00; 
+  --primary: #001524;
+  --secondary: #15616D;
+  --accent:#FFB569 ;
+  --background: #FFECD1;
+  --darker: #dacbb7;
+  --main: #FF7D00;
 }
 
 .footer-nav {

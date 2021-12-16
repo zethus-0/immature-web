@@ -11,8 +11,8 @@ class Post extends Model
     use Sluggable;
 
     protected $fillable = ['title', 'slug', 'content', 'description', 'image_path', 'user_id', 'category'];
-    protected $category = ['game development', 'web development', 'general'];
-    
+    // protected $category = ['game development', 'web development', 'general'];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
