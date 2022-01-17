@@ -12,7 +12,7 @@
 </div>
 @endif
 </div>
-<div class="overflow-x-hidden bg-background">
+<div class="overflow-x-hidden">
     <div class="px-6 py-8">
         <div class="container flex justify-between mx-auto">
             <div class="w-full lg:w-8/12">
@@ -80,14 +80,14 @@
             <div class="hidden w-4/12 -mx-8 lg:block">
                 <div class="px-8">
                     <h1 class="mb-4 text-xl font-bold text-primary">Developers</h1>
-                    <div class="box-shadow flex flex-col max-w-sm px-6 py-4 mx-auto bg-secondary rounded-lg shadow-md">
+                    <div class="flex flex-col max-w-sm px-6 py-4 mx-auto rounded-lg shadow-md">
                         <ul class="-mx-4">
                             @foreach ($developers as $developer)
                             <li class="flex items-center"><img
                                     src="{{ $developer->image_path }}"
                                     alt="avatar" class="object-cover w-10 h-10 mx-4 rounded-full">
                                 <p><a href="#" class="mx-1 font-bold text-accent hover:underline">{{ $developer->name }}</a><span
-                                        class="text-sm font-light text-gray-700"></span></p>
+                                        class="text-sm font-light text-white"></span></p>
                             </li>
                             @endforeach
                         </ul>

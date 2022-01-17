@@ -5,14 +5,19 @@
 @import "tailwindcss/utilities";
 
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+      html {
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
 
 :root {
-  --primary: #001524;
+  --primary: #ffffff;
   --secondary: #15616D;
-  --accent:#FFB569 ;
+  --accent:#ffffff ;
   --background: #FFECD1;
   --darker: #dacbb7;
-  --main: #FF7D00;
+  --main: #ffffff;
 }
 
 .footer-nav {

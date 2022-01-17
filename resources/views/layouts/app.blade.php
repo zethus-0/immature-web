@@ -21,101 +21,75 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <!-- NAVIGATION MENU -->
-<body class="bg-background  antialiased leading-none font-sans ">
+
+<body class="leading-normal tracking-normal text-indigo-400 bg-cover bg-fixed m-6" style="background-image: url({{ url('/images') }}/bg.png);">
     <div id="app">
         <header>
-            <div class="bg-primary py-4 px-2 ">
+            <div class="py-4 px-2 ">
                 <div class="">
-                    <nav class="flex items-center justify-between flex-wrap  ">
-                        <div class="flex items-center flex-no-shrink text-white mr-6 ">
-                            <a href="/"><img src="{{ url('/images') }}/logo-2.png" alt=""
-                                    class="filter-invert h-50 object-cover h-10 w-40 mr-2  "></a>
-                        </div>
-                        <div class="block lg:hidden">
-                            <button
-                                class="navbar-burger flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white">
-                                <svg class="fill-current h-6 w-6 text-gray-700" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <title>Menu</title>
-                                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div id="main-nav" class="w-full flex-grow lg:flex items-center lg:w-auto hidden  ">
-                            <div class="text-sm lg:flex-grow mt-2 animated jackinthebox xl:mx-8">
-                                <a href="/"
-                                    class="block lg:inline-block text-lg font-bold  text-main  sm:hover:border-accent  hover:text-accent mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
-                                    HOME
-                                </a>
-                                <a href="/blog"
-                                    class="block lg:inline-block text-lg font-bold  text-main  sm:hover:border-accent  hover:text-accent mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
-                                    BLOG
-                                </a>
-                                @guest
-                                    <a href="{{ route('login') }}"
-                                        class="block lg:inline-block text-lg font-bold  text-main  sm:hover:border-accent  hover:text-accent mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
-                                        LOGIN
-                                    </a>
-                                    @if(Route::has('register'))
-                                        <a href="{{ route('register') }}"
-                                            class="block lg:inline-block text-lg font-bold  text-main  sm:hover:border-accent  hover:text-accent mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
-                                            REGISTER
-                                        </a>
-                                    @endif
-                                @else
-                                    <a href="/{{ Auth::user()->username }}"
-                                        class="uppercase block lg:inline-block text-md font-bold  text-primary  sm:hover:border-accent  hover:text-main mx-2  p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg">
-                                        {{ Auth::user()->name }}
-                                    </a>
-                                    <a href="{{ route('logout') }}"
-                                        class="uppercase block lg:inline-block text-md font-bold  text-primary  sm:hover:border-accent  hover:text-main mx-2 p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
-                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}"
-                                        method="POST" class="hidden">
-                                        {{ csrf_field() }}
-                                    </form>
-                                @endguest
-                            </div>
-                        </div>
-                        <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
-                    </nav>
+                    <div class="header-2">
+                        <nav class="py-2 md:py-4">
+                            <div class="container px-4 mx-auto md:flex md:items-center">
+                                <div class="flex justify-between items-center">
+                                    <a href="/"><img src="{{ url('/images') }}/logo-2.png" alt=""
+                                            class="filter-invert h-50 object-cover h-10 w-40 mr-2"></a>
+                                    <button
+                                    class="md:hidden"
+                                        id="navbar-toggle">
+                                        <div class="p-2 space-y-2 bg-gray-600 rounded shadow">
+                                            <span class="block w-8 h-0.5 bg-gray-100 animate-pulse"></span>
+                                            <span class="block w-8 h-0.5 bg-gray-100 animate-pulse"></span>
+                                            <span class="block w-8 h-0.5 bg-gray-100 animate-pulse"></span>
+                                          </div>
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                </div>
 
+                                <div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0"
+                                    id="navbar-collapse">
+                                    <a href="/" class="p-2 lg:px-4 md:mx-2 text-white rounded bg-indigo-600">Home</a>
+                                    <a href="/blog"
+                                        class="p-2 lg:px-4 md:mx-2 text-white rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">Blog</a>
+                                    <a href="/team"
+                                        class="p-2 lg:px-4 md:mx-2 text-white rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">About
+                                        Us</a>
+                                    @guest
+                                        <a href="{{ route('login') }}"
+                                            class="p-2 lg:px-4 md:mx-2 text-white rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">Login</a>
+                                        @if (Route::has('register'))
+                                            <a href="{{ route('register') }}"
+                                                class="p-2 lg:px-4 md:mx-2 text-white rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">Register</a>
+                                        @endif
+                                    @else
+                                        <a href="/{{ Auth::user()->username }}"
+                                            class="p-2 lg:px-4 md:mx-2 text-indigo-600 text-center border border-transparent rounded hover:bg-indigo-100 hover:text-indigo-700 transition-colors duration-300">{{ Auth::user()->name }}</a>
+                                        <a href="{{ route('logout') }}"
+                                            class="p-2 lg:px-4 md:mx-2 text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="hidden">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    @endguest
+                                </div>
+                            </div>
+                        </nav>
+
+
+                    </div>
                 </div>
             </div>
-        </div>
         </header>
 
 
-
-<!-- SCREEN SIZE SCRIPT -->
-
         <script>
-            // Navbar Toggle
-            document.addEventListener('DOMContentLoaded', function () {
+            let toggleBtn = document.querySelector("#navbar-toggle");
+            let collapse = document.querySelector("#navbar-collapse");
 
-                // Get all "navbar-burger" elements
-                var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-                // Check if there are any navbar burgers
-                if ($navbarBurgers.length > 0) {
-
-                    // Add a click event on each of them
-                    $navbarBurgers.forEach(function ($el) {
-                        $el.addEventListener('click', function () {
-
-                            // Get the "main-nav" element
-                            var $target = document.getElementById('main-nav');
-
-                            // Toggle the class on "main-nav"
-                            $target.classList.toggle('hidden');
-
-                        });
-                    });
-                }
-
-            });
-
+            toggleBtn.onclick = () => {
+                collapse.classList.toggle("hidden");
+                collapse.classList.toggle("flex");
+            };
         </script>
         <div>
             @yield('content')

@@ -1,7 +1,6 @@
-
 @extends('layouts.app')
 @section('content')
-<section class="h-full bg-background leading-none">
+<section class="h-full leading-none">
 
 
 <div class="container w-100 mx-auto ">

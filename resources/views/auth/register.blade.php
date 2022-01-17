@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<main class="box-shadow sm:container sm:mx-auto sm:max-w-lg sm:mt-10 sm:rounded-md">
+<main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10 sm:rounded-md">
     <div class="flex">
         <div class="w-full sm:rounded-md">
-            <section class="flex flex-col break-words bg-secondary sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
+            <section class="text-black flex flex-col break-words sm:border-1">
 
-                <header class="font-semibold bg-primary text-main py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+                <header class="font-semibold text-main py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Register') }}
                 </header>
 
@@ -15,7 +15,7 @@
                     @csrf
 
                     <div class="flex flex-wrap">
-                        <label for="name" class="text-shadow block text-main text-sm font-bold mb-2 sm:mb-4">
+                        <label for="name" class=" block text-main text-sm font-bold mb-2 sm:mb-4">
                             {{ __('Name') }}:
                         </label>
 
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="flex flex-wrap">
-                        <label for="username" class="text-shadow block text-main text-sm font-bold mb-2 sm:mb-4">
+                        <label for="username" class="block text-main text-sm font-bold mb-2 sm:mb-4">
                             {{ __('Username') }}:
                         </label>
 
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="flex flex-wrap">
-                        <label for="email" class="text-shadow block text-main text-sm font-bold mb-2 sm:mb-4">
+                        <label for="email" class=" block text-main text-sm font-bold mb-2 sm:mb-4">
                             {{ __('E-Mail Address') }}:
                         </label>
 
@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="flex flex-wrap">
-                        <label for="password" class="text-shadow block text-main text-sm font-bold mb-2 sm:mb-4">
+                        <label for="password" class="block text-main text-sm font-bold mb-2 sm:mb-4">
                             {{ __('Password') }}:
                         </label>
 
@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="flex flex-wrap">
-                        <label for="password-confirm" class="text-shadow block text-main text-sm font-bold mb-2 sm:mb-4">
+                        <label for="password-confirm" class=" block text-main text-sm font-bold mb-2 sm:mb-4">
                             {{ __('Confirm Password') }}:
                         </label>
 
@@ -87,7 +87,7 @@
 
                     <div class="flex flex-wrap">
                         <button type="submit"
-                            class="box-shadow w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-primary bg-accent hover:bg-main sm:py-4">
+                            class=" w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-primary bg-indigo-500 hover:bg-indigo-600 transform duration-200 sm:py-4">
                             {{ __('Register') }}
                         </button>
 

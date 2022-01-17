@@ -1,7 +1,6 @@
-<footer class="fixed bottom-0 w-full footer-shadow bg-primary py-5 mt-5">
-    <div class="w-4/5 pb-3 m-auto border-b-2 border-gray-800">
-
-        <div class="flow-root ">
+<footer class="bottom-0 w-full py-5 mt-5">
+    <div class="w-4/5 pb-3 m-auto border-b-2 ">
+        <div class="flow-root">
             <p class="float-left py-4 sm:text-s pt-2 text-main">
                 <span class="footer-nav pb-1 mr-5">
                     <a href="/">
