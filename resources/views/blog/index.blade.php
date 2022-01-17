@@ -84,7 +84,7 @@
                         <ul class="-mx-4">
                             @foreach ($developers as $developer)
                             <li class="flex items-center"><img
-                                    src="{{ $developer->image_path }}"
+                                    src="images/{{ $developer->image_path }}"
                                     alt="avatar" class="object-cover w-10 h-10 mx-4 rounded-full">
                                 <p><a href="#" class="mx-1 font-bold text-accent hover:underline">{{ $developer->name }}</a><span
                                         class="text-sm font-light text-white"></span></p>

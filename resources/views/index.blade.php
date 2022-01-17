@@ -13,7 +13,7 @@
                         <span class="block">Interactive Online Game</span>
                     </h2>
                     <a class="font-sans inline-flex items-center mt-20 py-4 px-6 rounded-full bg-indigo-600 hover:bg-indigo-500 transform duration-200"
-                        href="https://game.immature.live">
+                        href="http://game.immature.live">
                         <svg class="mr-3" width="16" height="9" viewBox="0 0 16 9" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.01 3.16553H0V5.24886H12.01V8.37386L16 4.20719L12.01 0.0405273V3.16553Z"
@@ -87,7 +87,7 @@
             <p class="font-extrabold text-primary text-l pb-9">
                 Come take a look at our demo product!
             </p>
-            <a href="https://game.immature.live"
+            <a href="http://game.immature.live"
                 class="text-white inline-flex items-center mt-20 bg-indigo-600 hover:bg-indigo-500 transform duration-200 py-3 px-8 rounded-3xl">
                 Demo
             </a>
