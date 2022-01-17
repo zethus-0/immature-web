@@ -19,7 +19,7 @@
                 <div class="flex items-center justify-between">
                     <h1 class="text-xl font-bold text-primary md:text-2xl">Development Blog</h1>
                     @admin
-                    <a href="blog/create" class="px-3 py-2 mx-1 font-medium text-black bg-white rounded-md">
+                    <a href="blog/create" class="px-3 py-2 mx-1 font-medium text-black bg-white bg-opacity-50 rounded-md">
                         Create new post
                     </a>
                     @endadmin
@@ -32,7 +32,7 @@
                 </div>
                 @foreach ($posts as $post)
                 <div class="mt-6">
-                 <div class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+                 <div class="max-w-2xl mx-auto overflow-hidden bg-white bg-opacity-50 rounded-lg shadow-md dark:bg-gray-800">
         <img class="object-cover w-full h-64" src="{{ asset('images/' . $post->image_path) }}" alt="Development Blog Image">
 
         <div class="p-6">
