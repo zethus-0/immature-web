@@ -38,7 +38,6 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('admin', function () {
             return request()->user()?->can('admin');
         });
-        $developers = Developer::get();
-        View::share('developers', $developers);
+       
     }
 }

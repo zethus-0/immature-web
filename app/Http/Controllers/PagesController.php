@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Developer;
+use Illuminate\Support\Facades\View;
 
 class PagesController extends Controller
 {
+
     public function index()
     {
         return view('index');
@@ -15,6 +15,8 @@ class PagesController extends Controller
 
     public function team()
     {
+        $developers = Developer::get();
+        View::share('developers', $developers);
         return view('team');
     }
     public function terms()
