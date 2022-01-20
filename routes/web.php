@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/team', [PagesController::class, 'team']);
+Route::get('/privacypolicy', [PagesController::class, 'privacy']);
+Route::get('/terms', [PagesController::class, 'terms']);
 
 
 Route::resource('/blog', PostsController::class);
