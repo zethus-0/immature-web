@@ -18,6 +18,16 @@
         </div>
 
     @endif
+    @if (session()->has('message'))
+<div class="w-4/5 m-auto">
+<div class="flex bg-green-100 rounded-lg p-4 mb-4 text-sm text-green-700" role="alert">
+    <svg class="w-5 h-5 inline mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+    <div>
+        <span class="font-medium">Success!</span> {{ session()->get('message') }}
+    </div>
+</div>
+</div>
+@endif
     <div class="h-full overflow-y-visible flex items-center justify-center">
 
         <div class="container mx-auto my-5 p-5">
@@ -66,12 +76,29 @@
                         <div class="text-gray-700">
                             <div class="grid grid-cols-1 text-sm">
                                 @admin
-                                <div class="grid grid-cols-3">
+                                <div class="grid grid-cols-3 pb-3">
                                     <div class="px-4 py-2 font-semibold">Administrator Rights</div>
                                     <div class="px-4 py-2">{{ $user->is_admin }}</div>
+                                    <form method="POST" action="/user/profile/{{ $user->id }}"
+
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PUT')
+                                        <input class="form-check-input appearance-none border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 bg-no-repeat bg-center bg-contain mr-2 cursor-pointer" type="checkbox" name="isadmin" value="0">
+                                        <label class="form-check-label inline-block text-gray-800 mr-4" for="flexCheckDefault">
+                                            Disable
+                                          </label>
+                                          <input class="form-check-input appearance-none border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 bg-no-repeat bg-center bg-contain mr-2 cursor-pointer" type="checkbox" name="isadmin" value="1">
+                                        <label class="form-check-label inline-block text-gray-800 mr-4" for="flexCheckDefault">
+                                            Enable
+                                          </label>
+                                        <button type="submit"
+                                        class="p-2 text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300">
+                                        Submit</button>
+
                                 </div>
                                 @endadmin
-                                <div class="grid grid-cols-3">
+                                <div class="grid grid-cols-3 pb-3">
                                     <div class="px-4 py-2 font-semibold">Username</div>
                                     <div class="px-4 py-2">{{ $user->username }}</div>
                                 </div>
@@ -79,17 +106,30 @@
                                     <div class="px-4 py-2 font-semibold">Name</div>
                                     <div class="px-4 py-2">{{ $user->name }}</div>
                                 </div>
+                                <div class="grid md:grid-cols-3 sm:grid-cols-2 pb-3">
+                                    <div class="px-4 py-2 font-semibold">E-mail</div>
+                                    <div class="px-4 py-2">
+                                        <a class="text-blue-800"
+                                            href="mailto:{{ $user->email }}">{{ $user->email }}</a>
+                                    </div>
+                                    @if (!$user->hasVerifiedEmail())
+                                    <a href="/email/verify"
+                                    class="p-2 text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300">Verify
+                                    E-mail</a>
+                                    @else
+                                    @endif
+                                </div>
                                 <form method="POST" action="/user/profile/{{ $user->id }}"
                                     enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="grid md:grid-cols-3 sm:grid-cols-2 pb-3">
                                          <div class="px-4 py-2 font-semibold">Profile Image</div>
-                                            <label class="p-2 w-10/12  text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 @if (!$user->hasVerifiedEmail())
+                                            <label class="p-2 sm:w-full md:w-10/12 text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 @if (!$user->hasVerifiedEmail())
                                                 cursor-not-allowed" disabled
                                                 @else
                                                 @endif ">
-                                            <span class="mt-2 text-base leading-normal">
+                                            <span class="text-base leading-normal">
                                                 Select an Image</span>
                                                 <input type="file"
                                                 name="image"
@@ -115,21 +155,10 @@
                                         Password</a>
                                 </div>
 
-                                <div class="grid md:grid-cols-3 sm:grid-cols-2 pb-3">
-                                    <div class="px-4 py-2 font-semibold">E-mail</div>
-                                    <div class="px-4 py-2">
-                                        <a class="text-blue-800"
-                                            href="mailto:{{ $user->email }}">{{ $user->email }}</a>
-                                    </div>
-                                    <a href="/email/verify"
-                                        class="p-2 text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300">Verify
-                                        E-mail</a>
-                                </div>
+
                             </div>
                         </div>
-                        <button
-                            class="block w-full p-2 lg:px-4 md:mx-2 text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1">
-                            Edit Account Information</button>
+
                     </div>
                     <div class="my-4"></div>
                     <div class="flex bg-white bg-opacity-50 p-3 shadow-sm rounded-sm">

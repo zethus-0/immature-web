@@ -40,17 +40,36 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
-        ]);
+        $check=$request->isadmin;
 
-        $img = uniqid() . '-' . $request->id . '-' . $request->image->extension();
-        $request->image->move(public_path('images'), $img);
+        if($request->isadmin != null) {
+            if (Auth::user()->is_admin) {
+            if($check === '1') {
+                User::where('id', $id)
+                ->update([
+                    'is_admin' => 1
+                ]);
+            } else
+                User::where('id', $id)
+                ->update([
+                    'is_admin' => 0
+                ]);
+            return back()->with('message', 'Permissions Set!');
+            }
+        } else if ($request->image) {
+            $request->validate([
+                'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+            ]);
 
-        User::where('id', $id)
-        ->update([
-            'image_path' => $img
-        ]);
-        return back()->with('message', 'Profile has been updated!');
+            $img = uniqid() . '-' . $request->id . '-' . $request->image->extension();
+            $request->image->move(public_path('images'), $img);
+
+            User::where('id', $id)
+            ->update([
+                'image_path' => $img
+            ]);
+            return back()->with('message', 'Profile has been updated!');
+        }
+        return back()->with('message');
     }
 }
