@@ -20,6 +20,7 @@ Route::get('/team', [PagesController::class, 'team']);
 Route::get('/privacypolicy', [PagesController::class, 'privacy']);
 Route::get('/terms', [PagesController::class, 'terms']);
 
+Route::get('user/profile/{id}', [UserController::class, 'profile'])->name('user.profile');
 
 Route::resource('/blog', PostsController::class);
 Route::resource('/blog.create', PostsController::class);
