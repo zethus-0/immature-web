@@ -31,4 +31,26 @@ class UserController extends Controller
     {
         return $this->is_admin === '1';
     }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+        ]);
+
+        $img = uniqid() . '-' . $request->id . '-' . $request->image->extension();
+        $request->image->move(public_path('images'), $img);
+
+        User::where('id', $id)
+        ->update([
+            'image_path' => $img
+        ]);
+        return back()->with('message', 'Profile has been updated!');
+    }
 }
