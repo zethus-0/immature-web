@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<main class=" sm:container sm:mx-auto sm:max-w-lg sm:mt-10 sm:rounded-md">
+<main class="bg-white bg-opacity-50 sm:container sm:mx-auto sm:max-w-lg sm:mt-10 sm:rounded-md">
     <div class="flex">
         <div class="w-full sm:rounded-md">
             <section class="flex flex-col sm:border-1 sm:rounded-md shadow-sm">

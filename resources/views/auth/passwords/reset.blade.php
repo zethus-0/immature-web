@@ -4,9 +4,9 @@
 <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
     <div class="flex">
         <div class="w-full">
-            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
+            <section class="flex flex-col break-words bg-white bg-opacity-50 sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-                <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+                <header class="font-semibold bg-gray-200 bg-opacity-50 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Reset Password') }}
                 </header>
 
@@ -21,7 +21,7 @@
                         </label>
 
                         <input id="email" type="email"
-                            class="form-input w-full @error('email') border-red-500 @enderror" name="email"
+                            class="text-black form-input w-full @error('email') border-red-500 @enderror" name="email"
                             value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
 
                         @error('email')
@@ -37,7 +37,7 @@
                         </label>
 
                         <input id="password" type="password"
-                            class="form-input w-full @error('password') border-red-500 @enderror" name="password"
+                            class="text-black form-input w-full @error('password') border-red-500 @enderror" name="password"
                             required autocomplete="new-password">
 
                         @error('password')
@@ -52,19 +52,20 @@
                             {{ __('Confirm Password') }}:
                         </label>
 
-                        <input id="password-confirm" type="password" class="form-input w-full"
+                        <input id="password-confirm" type="password" class="text-black form-input w-full"
                             name="password_confirmation" required autocomplete="new-password">
                     </div>
 
                     <div class="flex flex-wrap pb-8 sm:pb-10">
                         <button type="submit"
-                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
+                        class="w-full select-none font-bold whitespace-no-wrap p-3.5 text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 sm:py-4">
                             {{ __('Reset Password') }}
                         </button>
                     </div>
                 </form>
 
             </section>
+            <div class="pb-32"> </div>
         </div>
     </div>
 </main>
