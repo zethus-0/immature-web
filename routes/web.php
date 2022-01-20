@@ -21,10 +21,12 @@ Route::get('/privacypolicy', [PagesController::class, 'privacy']);
 Route::get('/terms', [PagesController::class, 'terms']);
 
 Route::get('user/profile/{id}', [UserController::class, 'profile'])->name('user.profile');
-
+Route::put('user/profile/{id}', [UserController::class, 'update'])->name('profile.update');
 Route::resource('/blog', PostsController::class);
 Route::resource('/blog.create', PostsController::class);
+
 Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

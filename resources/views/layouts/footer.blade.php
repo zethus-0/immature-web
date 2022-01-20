@@ -1,4 +1,4 @@
-<footer class="bottom-0 w-full py-5 mt-5">
+<footer class="fixed bottom-0 w-full py-5 mt-5">
     <div class="w-4/5 pb-3 m-auto border-b-2 ">
         <div class="flow-root">
             <p class="float-left py-4 sm:text-s pt-2 text-main">

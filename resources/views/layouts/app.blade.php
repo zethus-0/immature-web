@@ -22,7 +22,7 @@
 </head>
 <!-- NAVIGATION MENU -->
 
-<body class="leading-normal tracking-normal text-indigo-400 bg-cover bg-fixed m-6" style="background-image: url({{ url('/images') }}/bg.png);">
+<body class="pb-10 leading-normal tracking-normal text-indigo-400 bg-cover bg-fixed m-6" style="background-image: url({{ url('/images') }}/bg.png);">
     <div id="app">
         <header>
             <div class="py-4 px-2 ">
@@ -94,9 +94,6 @@
         <div>
             @yield('content')
         </div>
-        <div>
-            @include('layouts.footer')
-        </div>
 </body>
-
+@include('layouts.footer')
 </html>
