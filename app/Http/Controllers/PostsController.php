@@ -48,6 +48,7 @@ class PostsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'category' => 'required',
             'content' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg|max:5048'
         ]);
@@ -60,6 +61,7 @@ class PostsController extends Controller
             'title' => $request->input('title'),
             'content' => $request->input('content'),
             'description' => $request->input('description'),
+            'category' => $request->input('category'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $img,
             'user_id' => auth()->user()->id
@@ -104,6 +106,7 @@ class PostsController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'category' => $request->input('category'),
             'description' => 'required',
             'content' => 'required',
         ]);
@@ -112,6 +115,7 @@ class PostsController extends Controller
         ->update([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
+            'category' => $request->input('category'),
             'content' => $request->input('content'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'user_id' => auth()->user()->id

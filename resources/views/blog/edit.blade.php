@@ -40,7 +40,13 @@
                                 <input type="text" class="border-2 border-gray-300 p-2 w-full" name="title" id="title"
                                     value="{{ $post->title }}" required>
                             </div>
-
+                            <select id="category" name="category" required
+                            class="block appearance-none w-full bg-gray-200 border-2 border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                            <option hidden disabled selected>{{ $post->category }}</option>
+                            <option>General</option>
+                            <option>Game Development</option>
+                            <option>Web Development</option>
+                        </select>
                             <div class="mb-4">
                                 <label class="text-xl text-gray-600">Description<span
                                         class="text-red-500">*</span></label><br>

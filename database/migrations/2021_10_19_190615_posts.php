@@ -16,6 +16,7 @@ class Posts extends Migration
         Schema::create('posts', function(Blueprint $table){
             $table->increments('id');
             $table->string('slug');
+            $table->string('category');
             $table->string('title');
             $table->longText('description');
             $table->longText('content');
@@ -23,7 +24,6 @@ class Posts extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            // $table->enum('category', $category);
         });
     }
 

@@ -34,42 +34,56 @@
                                 <label class="text-xl text-gray-600">Title
                                     <span class="text-red-500">*</span>
                                 </label><br>
-                                <input type="text" class="border-2 border-gray-300 p-2 w-full" name="title" id="title"
+                                <input type="text" class="text-black border-2 border-gray-300 p-2 w-full" name="title" id="title"
                                     value="" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="text-xl text-gray-600">Category
+                                    <span class="text-red-500">*</span>
+                                </label><br>
+                                {{-- div class="relative"> --}}
+                                <select id="category" name="category" required
+                                    class="block appearance-none w-full bg-gray-200 border-2 border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <option>General</option>
+                                    <option>Game Development</option>
+                                    <option>Web Development</option>
+                                </select>
+                                {{-- <input type="dropdown" class="border-2 border-gray-300 p-2 w-full" name="category" id="category"
+                                    value="" required> --}}
                             </div>
                             <div class="mb-4">
                                 <label class="text-xl text-gray-600">Description<span
                                         class="text-red-500">*</span></label><br>
-                                <input type="text" class="border-2 border-gray-300 p-2 w-full" name="description"
+                                <input type="text" class="text-black border-2 border-gray-300 p-2 w-full" name="description"
                                     id="description" placeholder="" required>
                             </div>
                             <div class="mb-4">
                                 <label class="text-xl text-gray-600">Content <span
                                         class="text-red-500">*</span></label><br>
                                 <textarea name="content" class="border-2 border-gray-500">
-                                        </textarea required>
-                                        <div class="bg-grey-ligher pt-10 pb-5">
-                                            <label class="text-xl text-gray-600">Header Image<span class="text-red-500">*</span></label><br>
-                                            <label class="w-44 flex flex-col items-center px-2 py-3 bg-white-rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
-                                                <span class="mt-2 text-base leading-normal">
-                                                    select a file</span>
-                                                    <input type="file"
-                                                    name="image"
-                                                    class="hidden">
-                                            </label>
+                                                </textarea required>
+                                                <div class="bg-grey-ligher pt-10 pb-5">
+                                                    <label class="text-xl text-gray-600">Header Image<span class="text-red-500">*</span></label><br>
+                                                    <label class="text-black w-44 flex flex-col items-center px-2 py-3 bg-white-rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
+                                                        <span class="text-black mt-2 text-base leading-normal">
+                                                            select a file</span>
+                                                            <input type="file"
+                                                            name="image"
+                                                            class="hidden">
+                                                    </label>
+                                            </div>
+                                            <div class="flex p-1">
+                                                <button type="submit" class="p-3 bg-blue-500 text-white hover:bg-blue-400">Submit</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="flex p-1">
-                                        <button type="submit" class="p-3 bg-blue-500 text-white hover:bg-blue-400">Submit</button>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
+                        <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+                        <script>
+                            CKEDITOR.replace('content');
+                        </script>
+                        </div>
                     </div>
-                </div>
-                <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
-                <script>
-                    CKEDITOR.replace('content');
-                </script>
-                </div>
-            </div>
     @endsection

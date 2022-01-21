@@ -5,7 +5,7 @@
     <div class="flex flex-col items-center py-8">
       <div class="flex flex-col w-full mb-12 text-left">
         <div class="w-full mx-auto lg:w-1/2">
-          <h1 class="mx-auto mb-6 text-2xl font-semibold text-white lg:text-3xl">{{ $post->title }}</h1>
+          <h1 class="mx-auto mb-6 text-2xl font-semibold text-white lg:text-3xl">{{ $post->category }} - {{ $post->title }}</h1>
           <img class="rounded-sm" src="{{ asset('images/' . $post->image_path) }}" />
           <h2 class="mx-auto mt-4 mb-4 text-xl font-semibold text-white">{{ date('jS M Y', strtotime($post->created_at))}}</h2>
           <div class="mx-auto text-base font-medium leading-relaxed text-gray-200"> {!! $post->content !!} </div>
