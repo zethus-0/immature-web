@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [PagesController::class, 'index']);
-Route::get('/team', [PagesController::class, 'team']);
+Route::get('/', [PagesController::class, 'index'])->name('index');
+Route::get('/team', [PagesController::class, 'team'])->name('team');
 Route::get('/privacypolicy', [PagesController::class, 'privacy']);
 Route::get('/terms', [PagesController::class, 'terms']);
 
