@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('is_admin')->default(0);
+            $table->boolean('is_writer')->default(0);
             $table->string('image_path')->default('default.jpg');
             $table->string('username')->unique();
             $table->string('email')->unique();

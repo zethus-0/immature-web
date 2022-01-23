@@ -7,21 +7,33 @@ use App\Models\Post;
 use App\Models\Developer;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Pagination\Paginator;
+
 class PostsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:admin', ['except' => ['index', 'show']]);
+        $this->middleware('can:writer', ['except' => ['index', 'show']]);
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $developers = Developer::all();
         $posts = Post::orderBy('created_at', 'DESC')->paginate(3);
+
+        if ($request->has('Game Development')) {
+            $posts->where('category', 'Game Development');
+        }
+        if ($request->has('General')) {
+            $posts->where('category', 'General');
+        }
+        if ($request->has('Web Development')) {
+            $posts->where('category', 'Web Development');
+        }
+
         return view('blog.index', compact(['posts', 'developers']));
         // ->with('posts', Post::orderBy('created_at', 'DESC')->get()->with('developer', $developer));
     }
@@ -106,8 +118,8 @@ class PostsController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'category' => $request->input('category'),
             'description' => 'required',
+            'category' => 'required',
             'content' => 'required',
         ]);
 

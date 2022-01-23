@@ -40,11 +40,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $check=$request->isadmin;
+        $admin=$request->isadmin;
+        $writer=$request->iswriter;
 
         if($request->isadmin != null) {
             if (Auth::user()->is_admin) {
-            if($check === '1') {
+            if($admin === '1') {
                 User::where('id', $id)
                 ->update([
                     'is_admin' => 1
@@ -69,7 +70,21 @@ class UserController extends Controller
                 'image_path' => $img
             ]);
             return back()->with('message', 'Profile has been updated!');
+        } else if($request->iswriter !=null) {
+            if (Auth::user()->is_admin) {
+                if($writer === '1') {
+                    User::where('id', $id)
+                    ->update([
+                        'is_writer' => 1
+                    ]);
+                } else
+                    User::where('id', $id)
+                    ->update([
+                        'is_writer' => 0
+                    ]);
+                return back()->with('message', 'Permissions Set!');
         }
+    }
         return back()->with('message');
     }
 }
