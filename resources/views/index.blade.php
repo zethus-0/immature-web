@@ -19,7 +19,7 @@
                             <path d="M12.01 3.16553H0V5.24886H12.01V8.37386L16 4.20719L12.01 0.0405273V3.16553Z"
                                 fill="black"></path>
                         </svg>
-                        <span class="p-2 lg:px-4 md:mx-2 text-white rounded uppercase">Try our demo</span>
+                        <span class="p-2 lg:px-4 md:mx-2 text-xl font-bold text-white rounded uppercase">Try our demo</span>
                     </a>
                 </div>
             </div>
