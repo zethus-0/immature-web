@@ -181,7 +181,7 @@
                                                             Upload</button>
                                                 </div>
                                                 </form>
-                                                <div class="    grid md:grid-cols-3 sm:grid-cols-2 pb-3">
+                                                <div class="grid md:grid-cols-3 sm:grid-cols-2 pb-3">
                                                 <div class="px-4 py-2 font-semibold">Password</div>
                                                 <div class="px-4 py-2">*********</div>
                                                 <a href="/password/reset"
@@ -196,7 +196,7 @@
             </div>
         </div>
         <div class="mb-1/8"></div>
-        <div class="mb-1/5"></div>
+        <div class="mb-1/6 sm:mb-56"></div>
         {{-- <div class="container w-4/5 m-auto flex items-center justify-center bg-white bg-opacity-50 p-3 shadow-sm rounded-sm">
 <div class="grid grid-cols-2">
 <div>
