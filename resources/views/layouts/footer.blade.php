@@ -37,6 +37,11 @@
                         Privacy Policy
                     </a>
                 </span>
+                <span class="pb-1 mr-5">
+                    <a href="/contact">
+                        Contact Us
+                    </a>
+                </span>
 
             </p>
             <p class="float-right pb-3 text-s ml-10 text-gray-300 pt-2">
