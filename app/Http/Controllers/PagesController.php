@@ -12,6 +12,10 @@ class PagesController extends Controller
     {
         return view('index');
     }
+    public function contact()
+    {
+        return view('contact');
+    }
 
     public function team()
     {
